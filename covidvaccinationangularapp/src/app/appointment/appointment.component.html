@@ -1,0 +1,46 @@
+<div class="container">
+    
+    <h1 class="text-center text-danger" align="center">Book Appointment Screen</h1>
+</div>    
+
+<div class="container">
+    <form> 
+        <div class="form-group">
+          <label for="username">MobileNo</label>
+          <input type="String" class="form-control" id="MobileNo" 
+          ngModel #u="ngModel" name="MobileNo"
+           placeholder="Enter MobileNo" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="Appointmentdate">Appointment Date : &nbsp;</label>
+            <input type="date" id="dateTime" name="Registrationdate">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>VaccinationCenter</label>
+            <select name="role"  class="form-control" ngModel #l="ngModel" required>
+                <option value="" disabled>Select VaccinationCenter</option>
+                <option value="Center-1">Center-1(Delhi)</option>
+                <option value="Center-2">Center-2(Mumbai)</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Slot</label>
+            <select name="role"  class="form-control" ngModel #l="ngModel" required>
+                <option value="" disabled>Select Slot</option>
+                <option value="Slot1">Slot1(9AM-12AM)</option>
+                <option value="Slot2">Slot2(2PM-5PM)</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" (click)=fun1()  >Book Appointment</button>
+      
+    </form> 
+
+</div>
+<br><br>
+<input class="btn" routerLink="/listMember/:name" value="Home page">
+<br><br>
+<a routerLink="/logout"  class="btn btn-info">Logout</a>

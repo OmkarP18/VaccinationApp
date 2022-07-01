@@ -1,0 +1,30 @@
+<hr>
+<h2 class="text-center text-info">Vaccine Registration</h2>
+<hr>
+<br>
+<a routerLink="/logout"  class="btn btn-info">Logout</a>
+<br>
+<br>
+<div class="container">
+    <form> 
+        <div class="form-group">
+          <label for="username">MobileNo</label>
+          <input type="String" class="form-control" id="MobileNo" 
+           placeholder="Enter MobileNo" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="Registrationdate">Registrationdate</label>
+            <input type="date" id="dateTime" name="Registrationdate" required>
+            
+        </div>
+        <br>
+        <button class="btn btn-success"  (click)=fun1()>Register</button>
+      
+    </form> 
+</div>  
+<br><br>
+<button class="btn btn-success" routerLink="/appointment">Book Appointment</button>
+<br><br>
+<input class="btn" routerLink="/listMember/:name" value="Home page">
+<br><br>

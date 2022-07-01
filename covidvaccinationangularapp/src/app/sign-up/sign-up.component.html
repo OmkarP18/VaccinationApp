@@ -1,0 +1,74 @@
+
+
+<hr>
+<h2 class="text-center text-info">New User Registration !</h2>
+<hr>
+
+<h2 *ngIf="msg" class="alert-danger text-center" >{{msg}}</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="register()"> 
+
+    <div class="form-group">
+      <label for="emailid" class="text-success">Username</label>
+      <input type="text" class="form-control" id="emailid" formControlName="username"     
+       placeholder="Enter email">
+    </div>
+
+    <div *ngIf="(registrationForm.get('username').invalid) && registrationForm.get('username').touched">
+
+      <div *ngIf="(registrationForm.get('username').errors?.usernameExists)">
+            <span class="alert-danger">This Username is Already Registerd..!</span>
+        </div>
+        <div *ngIf="(registrationForm.get('username').errors?.required)">
+          <span class="alert-danger">Username is mandatory</span>
+      </div>
+
+
+  </div>
+
+
+    <div class="form-group">
+        <label for="pass" class="text-success">Password</label>
+        <input type="password" class="form-control" 
+        formControlName="password"
+        id="pass" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label for="remailid" class="text-success">Repeat-Password</label>
+        <input type="password" class="form-control" 
+        formControlName="repassword"
+        id="remailid" placeholder="Password">
+      </div>
+
+<div *ngIf="!(registrationForm.get('password').value === registrationForm.get('repassword').value)
+              && registrationForm.get('repassword').touched">
+
+  <span class="alert-danger">Please type same Repeat password</span>
+
+</div>
+
+
+
+    <div class="form-group">
+      <label class="text-success">Role</label>
+      <select class="form-control" formControlName="role">
+        <option disabled>select the role </option>
+          <option>Doctor</option>
+          <option>User</option>
+      </select>
+    
+    </div>
+
+    <div *ngIf="(registrationForm.get('role').invalid) && registrationForm.get('role').touched">
+
+      <span class="alert-danger">Please select the Role</span>
+
+  </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+  
+</form>

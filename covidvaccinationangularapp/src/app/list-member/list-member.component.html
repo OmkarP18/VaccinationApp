@@ -1,0 +1,38 @@
+<h1 class="text-center text-danger">Welcome {{loginname}}</h1>
+
+<h2 *ngIf="errorMessage">{{errorMessage}}</h2>
+
+<a routerLink="/logout"  class="btn btn-info">Logout</a>
+
+<div class="h5 text-success float-end">{{role}}</div>
+
+<br>
+<Marquee style="font-size: 25px; color: rgb(252, 38, 0);">Welcome To Covid_19 Vaccination Program</Marquee>
+<br>
+<br>
+<div class="container">
+
+  <div class="container"  *ngIf= "role === 'User'">
+
+    <h4 >Member Registration Form  </h4> <a routerLink="/registerMember" class="btn btn-primary">Register Member</a>
+    
+    <br><br>
+    <h4>Vaccineregitration Form  </h4><a routerLink="/vaccineRegitration" class="btn btn-primary">Vaccineregitration</a>
+
+    <br><br>
+    <h4>Book Appointment Form  </h4> <a routerLink="/appointment" class="btn btn-primary">Appointment</a>
+    <br>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
